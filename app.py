@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = '159357'  # Secret key for session handling
@@ -14,9 +15,13 @@ class User(db.Model):
     name = db.Column(db.String(50))
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(16), nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False)
 
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
 
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 #########################################################
 
@@ -31,13 +36,14 @@ def login():
         user = User.query.filter_by(username=username).first()
 
         # Check if user exists and password matches
-        if user and user.password == password:
+        if user and user.check_password(password):
             session['user'] = username
             return redirect(url_for('dashboard'))
         
         error = 'Invalid username or password. Please try again.'
         return render_template('login.html', error=error)  # Show error message
     return render_template('login.html')
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -61,15 +67,12 @@ def signup():
     
     return render_template('signup.html')
 
-
-
 # Dashboard Route
 @app.route('/dashboard')
 def dashboard():
     if 'user' in session:
         return render_template('dashboard.html', user=session['user'])
     return redirect(url_for('login'))  # Corrected redirection
-
 
 # Logout Route
 @app.route('/logout')
