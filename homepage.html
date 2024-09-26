@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Personal Assistance</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="resign.html">Resign</a></li>
+    </ul>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="mode-toggle" id="mode-toggle">
+        <img id="mode-icon" src="light-icon.png" alt="Toggle Dark Mode" width="24px">
+    </button>
+</nav>
+
+<div class="homepage-container">
+    <header>
+        <h1>Welcome to Personal Assistance</h1>
+    </header>
+    <section class="content">
+        <p>This is the homepage where you can manage your tasks, appointments, and more.</p>
+    </section>
+</div>
+
+</body>
+<script>
+    const toggleButton = document.getElementById('mode-toggle');
+    const modeIcon = document.getElementById('mode-icon');
+
+    // Check for saved user preference for dark mode (if any)
+    const userPrefersDark = localStorage.getItem('darkMode') === 'enabled';
+
+    // Apply saved preference on load
+    if (userPrefersDark) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.navbar').classList.add('dark-mode');
+        modeIcon.src = 'dark-icon.png';  // Change to dark icon
+    }
+
+    // Toggle dark mode when button is clicked
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.navbar').classList.toggle('dark-mode');
+
+        // Toggle icon image and save the user's preference in localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            modeIcon.src = 'dark-icon.png'; // Set dark mode icon
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            modeIcon.src = 'light-icon.png'; // Set light mode icon
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+
+</html>
