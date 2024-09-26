@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage - Personal Assistance</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="static\css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/dashboard">Home</a></li>
+      </ul>
 
-</head>
-<body>
-
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <ul>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-        <li><a href="homepage.html">Home</a></li>
-        
+      <!-- Dark Mode Toggle Button -->
+      <button
+        class="mode-toggle"
+        id="mode-toggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <img
+          id="mode-icon"
+          src="static\images/light-icon.png"
+          alt="Toggle Dark Mode"
+          width="24px"
+        />
+      </button>
+    </nav>
+    <!-- Navigation Sidebar  -->
+    <nav class="sidebar-menu">
+    <ul class="sidebar-menu">
+    <!-- Calculator app-->
+      <li>
+        <a href="/templates/calculator.html"
+          ><i class="fa fa-calculator"></i> Calculator</a
+        >
+      </li>
     </ul>
-
-    <!-- Dark Mode Toggle Button -->
-    <button class="mode-toggle" id="mode-toggle">
-        <img id="mode-icon" src="light-icon.png" alt="Toggle Dark Mode" width="24px">
-    </button>
-</nav>
-
-<div class="homepage-container">
-    <header>
+    </nav>
+    <!-- Homepage Content -->
+    <div class="homepage-container">
+      <header>
         <h1>Welcome to Personal Assistance</h1>
-    </header>
-    <section class="content">
-        <p>This is the homepage where you can manage your tasks, appointments, and more.</p>
-    </section>
-</div>
+      </header>
+      <section class="content">
+        <p>
+          This is the homepage where you can manage your tasks, appointments,
+          and more.
+        </p>
 
-</body>
-
+        <!-- Add a call-to-action or shortcut buttons -->
+        <div class="cta-buttons">
+          <a href="tasks.html" class="button">Manage Tasks</a>
+          <a href="appointments.html" class="button">Manage Appointments</a>
+        </div>
+      </section>
+    </div>
+    <script src="/js/main.js" defer></script>
+    <script src="/static/calculator.js" defer></script>
+    
+  </body>
 </html>
