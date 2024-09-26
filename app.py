@@ -64,8 +64,9 @@ def signup():
         else:
             error = 'Username already exists. Please choose a different one.'
             return render_template('signup.html', error=error)
-    
+
     return render_template('signup.html')
+
 
 # Dashboard Route
 @app.route('/dashboard')

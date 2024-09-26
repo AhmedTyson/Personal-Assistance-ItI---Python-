@@ -12,7 +12,7 @@
 <!-- Navigation Bar -->
 <nav class="navbar">
     <ul>
-        <li><a href="/login">Login</a></li>
+        <li><a href="/">Login</a></li>
         <li><a href="/signup">Sign Up</a></li>
         <li><a href="/dashboard">Home</a></li>
     </ul>
@@ -41,6 +41,9 @@
                 <p>Don't have an account? <a href="/signup">Sign up</a> | <a href="forgot-password.html">Forgot Password?</a></p>
             </div>
         </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
     </div>
 </div>
 <script src="js/main.js" defer></script>
