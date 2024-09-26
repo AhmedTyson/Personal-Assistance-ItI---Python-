@@ -16,6 +16,8 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(16), nullable=False)
 
+
+
 #########################################################
 
 # Login Route
@@ -36,6 +38,29 @@ def login():
         error = 'Invalid username or password. Please try again.'
         return render_template('login.html', error=error)  # Show error message
     return render_template('login.html')
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        name = request.form['name']
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+
+        # Check if user already exists
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user is None:
+            new_user = User(name=name, username=username, email=email)
+            new_user.set_password(password)  # Hash the password
+            db.session.add(new_user)
+            db.session.commit()
+            return redirect(url_for('login'))
+        else:
+            error = 'Username already exists. Please choose a different one.'
+            return render_template('signup.html', error=error)
+    
+    return render_template('signup.html')
+
 
 
 # Dashboard Route
