@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/static/css/calculator.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/static/Sidebar/index.html">menu</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle Button -->
+      <button
+        class="mode-toggle"
+        id="mode-toggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <img
+          id="mode-icon"
+          src="static\images/light-icon.png"
+          alt="Toggle Dark Mode"
+          width="24px"
+        />
+      </button>
+    <!-- Navigation Sidebar  -->
+    <nav class="sidebar-menu">
+      <ul class="sidebar-menu">
+        <!-- Calculator app-->
+        <li>
+          <a href="/templates/calculator.html"
+            ><i class="fa fa-calculator"></i> Calculator</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="calculator">
+      <input type="text" id="screen" class="screen" readonly />
+
+      <div class="row">
+        <button class="button clear" onclick="clearScreen()">C</button>
+        <button class="button" onclick="appendValue('7')">7</button>
+        <button class="button" onclick="appendValue('8')">8</button>
+        <button class="button" onclick="appendValue('9')">9</button>
+        <button class="button operator" onclick="appendOperator('/')">÷</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('4')">4</button>
+        <button class="button" onclick="appendValue('5')">5</button>
+        <button class="button" onclick="appendValue('6')">6</button>
+        <button class="button operator" onclick="appendOperator('*')">×</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('1')">1</button>
+        <button class="button" onclick="appendValue('2')">2</button>
+        <button class="button" onclick="appendValue('3')">3</button>
+        <button class="button operator" onclick="appendOperator('-')">−</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('0')">0</button>
+        <button class="button equal" onclick="calculate()">=</button>
+        <button class="button operator" onclick="appendOperator('+')">+</button>
+      </div>
+    </div>
+
+    <h3>Calculation History</h3>
+    <ul id="history"></ul>
+
+    <script src="/static/calculator.js"></script>
+  </body>
+</html>

@@ -171,7 +171,7 @@ body {
     padding-top: 60px;
 }
 
-/* Containers for Login, Signup, and Resign */
+/* Containers for Login, .sign-up, and Resign */
 .container {
     background-color: #f9f9f9;
     padding: 20px;
@@ -258,3 +258,9 @@ button:hover {
 body, .navbar, .container, input[type="text"], input[type="password"] {
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
+
+
+/* U---------------------------------------------------------------------------------U */
+/* U---------------------------------------------------------------------------------U */
+
+

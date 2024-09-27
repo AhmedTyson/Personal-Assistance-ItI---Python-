@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Menu for Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+
+    <nav class="sidebar">
+      <a href="#" class="logo">Apps</a>
+
+      <div class="menu-content">
+        <ul class="menu-items">
+          <div class="menu-title">apps</div>
+
+          <li class="To-dolist">
+            <a href="">To-do list</a>
+          </li>
+          <br>
+          <li class="calculator">
+            <a href="/static/Sidebar/sidebar apps/calculator.html">Calculator</a>
+          </li>
+
+          <li class="item">
+            <div class="submenu-item">
+              <span>To-do list</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <ul class="menu-items submenu">
+              <div class="menu-title">
+                <i class="fa-solid fa-chevron-left"></i>
+                Starred to-do list
+              </div>
+              <li class="calculator">
+                <a href="/static/Sidebar/sidebar apps/calculator.html">Calculator</a>
+              </li>
+              
+    </nav>
+
+    <nav class="navbar">
+      <i class="fa-solid fa-bars" id="sidebar-close"></i>
+    </nav>
+
+    <main class="main">
+      <h1>Admin Dashboard Content</h1>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

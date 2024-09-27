@@ -67,6 +67,7 @@ def signup():
 
     return render_template('signup.html')
 
+#######################################
 
 # Dashboard Route
 @app.route('/dashboard')
@@ -75,12 +76,19 @@ def dashboard():
         return render_template('dashboard.html', user=session['user'])
     return redirect(url_for('login'))  # Corrected redirection
 
+# Calculator Route
+@app.route('/calculator')
+def calculator():
+    return render_template('calculator.html')
+
+
 # Logout Route
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect(url_for('login'))  # Corrected redirection
 
+#########################################
 
 if __name__ == '__main__':
     app.run(debug=True)
