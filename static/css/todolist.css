@@ -1,0 +1,277 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px; /* Space for the fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #3498db;
+}
+
+/* Main Content Containers */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Form Input Fields */
+h2 {
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: 2px solid #333;
+  outline: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 10px;
+  color: #333;
+  font-size: 12px;
+}
+
+/* Headings */
+h1,
+h2 {
+  text-align: center;
+  color: #0e0101;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+}
+
+/* Toggle Button Styling */
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.mode-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Smooth transitions for mode changes */
+body,
+.navbar,
+.container,
+input[type="text"],
+input[type="password"] {
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark Mode Styles */
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+}
+
+/* Change h1 and h2 colors in dark mode */
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: white; /* Change headings to white */
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .container {
+  background-color: #333;
+  color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode input {
+  background-color: #444;
+  color: #f0f0f0;
+  border: 1px solid #666;
+}
+
+body.dark-mode .navbar ul li a {
+  color: #bdb3b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .navbar ul li {
+    margin: 0 10px;
+  }
+}
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for input */
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #465565;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Task List Styles */
+#task-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto; /* Center the task list */
+}
+
+#task-list li {
+  background: #555;
+  margin: 10px 0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#task-list li:hover {
+  background-color: #444;
+}
+
+/* Smooth transitions for mode changes */
+body,
+.navbar,
+.container,
+input[type="text"],
+input[type="password"] {
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Additional styles for the sidebar can be added here if needed */

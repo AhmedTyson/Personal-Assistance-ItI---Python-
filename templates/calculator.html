@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple calculator app built with HTML, CSS, and JavaScript."
+    />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/sidebar.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/calculator.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+      </ul>
+      <button
+        type="button"
+        class="logout"
+        id="logout"
+        onclick="window.location.href='{{ url_for('logout') }}'"
+      >
+        Logout
+      </button>
+      <!-- Dark Mode Toggle Button -->
+      <button
+        class="mode-toggle"
+        id="mode-toggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <img
+          id="mode-icon"
+          src="{{ url_for('static', filename='images/light-icon.png') }}"
+          alt="Toggle Dark Mode"
+          width="20px"
+        />
+      </button>
+
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">
+          &#9776; Open Sidebar
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar Navigation Menu (Appears below the Navbar) -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="{{ url_for('todolist') }}">To-do List</a>
+      <a href="{{ url_for('calculator') }}">Calculator</a>
+    </div>
+
+    <div class="calculator">
+      <input type="text" id="screen" class="screen" readonly />
+
+      <div class="row">
+        <button class="button clear" onclick="clearScreen()">C</button>
+        <button class="button" onclick="appendValue('7')">7</button>
+        <button class="button" onclick="appendValue('8')">8</button>
+        <button class="button" onclick="appendValue('9')">9</button>
+        <button class="button operator" onclick="appendOperator('/')">÷</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('4')">4</button>
+        <button class="button" onclick="appendValue('5')">5</button>
+        <button class="button" onclick="appendValue('6')">6</button>
+        <button class="button operator" onclick="appendOperator('*')">×</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('1')">1</button>
+        <button class="button" onclick="appendValue('2')">2</button>
+        <button class="button" onclick="appendValue('3')">3</button>
+        <button class="button operator" onclick="appendOperator('-')">−</button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendValue('0')">0</button>
+        <button class="button equal" onclick="calculate()">=</button>
+        <button class="button operator" onclick="appendOperator('+')">+</button>
+      </div>
+    </div>
+
+    <h3>Calculation History</h3>
+    <ul id="history"></ul>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <script
+      src="{{ url_for('static', filename='js/calculator.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/sidebar.js') }}"
+      defer
+    ></script>
+  </body>
+</html>
