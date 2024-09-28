@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -61,3 +62,364 @@ body {
     grid-column: span 2;
   }
   
+=======
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px; /* Space for the fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #3498db;
+}
+
+/* Main Content Containers */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 70px auto; /* Adjust margin to avoid navbar overlap */
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Sidebar Menu Styles */
+.sidebar-menu {
+  position: fixed;
+  left: 0;
+  top: 60px; /* Adjust to align with the navbar */
+  width: 200px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+}
+
+.sidebar-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu ul li {
+  margin: 10px 0;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.sidebar-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Calculator Styles */
+.calculator {
+  max-width: 2000px;
+  margin: 20px auto; /* Center the calculator */
+  background-color: #552f2f;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Screen Styles */
+.screen {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  text-align: right;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Headings */
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+}
+
+/* Toggle Button Styling */
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.mode-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Button Styles for Calculator */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #ff7f50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Added transform for hover effect */
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.operator {
+  background-color: #004687; /* Blue for operators */
+}
+
+.operator:hover {
+  background-color: #1e88e5; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.equal {
+  background-color: #ff4500; /* Red for equals */
+}
+
+.equal:hover {
+  background-color: #e53935; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.clear {
+  background-color: #ff9800; /* Orange for clear */
+}
+
+.clear:hover {
+  background-color: #89cff0; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Dark Mode Styles for Calculator Buttons */
+body.dark-mode .button {
+  background-color: #555; /* Darker green for buttons */
+}
+
+body.dark-mode .button:hover {
+  background-color: #6a6; /* Light green on hover in dark mode */
+}
+
+body.dark-mode .operator {
+  background-color: #007bb5; /* Darker blue for operators */
+}
+
+body.dark-mode .operator:hover {
+  background-color: #005f8a; /* Darker blue on hover */
+}
+
+body.dark-mode .equal {
+  background-color: #e53935; /* Red for equals in dark mode */
+}
+
+body.dark-mode .equal:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+body.dark-mode .clear {
+  background-color: #ff9800; /* Orange for clear in dark mode */
+}
+
+body.dark-mode .clear:hover {
+  background-color: #fb8c00; /* Darker orange on hover */
+}
+
+/* Calculation History Styles */
+#history {
+  list-style-type: none;
+  padding: 0;
+  max-width: 300px;
+  margin: 20px auto;
+  background-color: #444;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#history li {
+  padding: 5px;
+  border-bottom: 1px solid #000000;
+}
+
+#history li:last-child {
+  border-bottom: none;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .container {
+  background-color: #333;
+  color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode input {
+  background-color: #444;
+  color: #f0f0f0;
+  border: 1px solid #666;
+}
+
+body.dark-mode .navbar ul li a {
+  color: #bdb3b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .navbar ul li {
+    margin: 0 10px;
+  }
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for input */
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #465565;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Smooth transitions for mode changes */
+body,
+.navbar,
+.container,
+input[type="text"],
+input[type="password"] {
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+>>>>>>> Stashed changes
