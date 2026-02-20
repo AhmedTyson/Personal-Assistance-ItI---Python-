@@ -1,14 +1,19 @@
-# Personal Assistance — ITI Python Capstone
+# <img src="https://api.iconify.design/lucide:container.svg?color=%238A2BE2" width="32" height="32" align="center" /> Personal Assistance — ITI Capstone
 
-> A full-stack personal assistant web application built with Python and Flask, developed as the final project for the ITI Full Stack Web Development Using Python course.
+> **A full-stack personal assistant web application built with Python and Flask.**
+> Developed as the final project for the ITI Full Stack track, featuring Sierra ILS integration.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-Web_Framework-black?style=for-the-badge&logo=flask)
-![Status](https://img.shields.io/badge/Status-ITI_Capstone-gold?style=for-the-badge)
+<div align="center">
+
+| Project Status | Stack                                                                                                   | Framework                                                                       | Deployment      |
+| :------------- | :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------ | :-------------- |
+| `STABLE`       | ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white) | ![Flask](https://img.shields.io/badge/Flask-black?style=flat-square&logo=flask) | `Netlify/Local` |
+
+</div>
 
 ---
 
-## 📋 Table of Contents
+## <img src="https://api.iconify.design/lucide:list.svg?color=%238A2BE2" width="20" height="20" align="center" /> Table of Contents
 
 - [Overview](#overview)
 - [Features](#-features)
@@ -27,7 +32,9 @@ At its core is a **Sierra ILS-inspired Library Management System** — a web-bas
 
 ---
 
-## ✨ Features
+---
+
+## <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238A2BE2" width="20" height="20" align="center" /> Features
 
 | Module                              | Description                                                             |
 | ----------------------------------- | ----------------------------------------------------------------------- |
@@ -40,7 +47,9 @@ At its core is a **Sierra ILS-inspired Library Management System** — a web-bas
 
 ---
 
-## 💻 Tech Stack
+---
+
+## <img src="https://api.iconify.design/lucide:cpu.svg?color=%238A2BE2" width="20" height="20" align="center" /> Tech Stack
 
 | Layer            | Technology                             |
 | ---------------- | -------------------------------------- |
@@ -52,7 +61,9 @@ At its core is a **Sierra ILS-inspired Library Management System** — a web-bas
 
 ---
 
-## 🏗️ Architecture
+---
+
+## <img src="https://api.iconify.design/lucide:git-pull-request.svg?color=%238A2BE2" width="20" height="20" align="center" /> Architecture
 
 ```
 Request → Flask Router (app.py)
@@ -75,7 +86,9 @@ Request → Flask Router (app.py)
 
 ---
 
-## 📁 Project Structure
+---
+
+## <img src="https://api.iconify.design/lucide:folder-tree.svg?color=%238A2BE2" width="20" height="20" align="center" /> Project Structure
 
 ```
 Personal-Assistance-ItI---Python-/
@@ -92,7 +105,9 @@ Personal-Assistance-ItI---Python-/
 
 ---
 
-## 🚀 Getting Started
+---
+
+## <img src="https://api.iconify.design/lucide:rocket.svg?color=%238A2BE2" width="20" height="20" align="center" /> Getting Started
 
 ### Prerequisites
 
